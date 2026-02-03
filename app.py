@@ -1,3 +1,4 @@
+import os
 from flask import Flask, render_template, jsonify
 
 app = Flask(__name__)
@@ -12,7 +13,8 @@ def greet():
     """API endpoint that returns JSON"""
     return jsonify({
         'message': 'Hello from Flask!',
-        'status': 'success'
+        'status': 'success',
+        'environment': os.environ.get('FLASK_ENV', 'production')
     })
 
 if __name__ == '__main__':
