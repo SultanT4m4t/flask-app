@@ -1,9 +1,9 @@
 {% extends "base.html" %}
 
-{% block title %}All Products - Product Gallery{% endblock %}
+{% block title %}{{ current_category.name }} - Product Gallery{% endblock %}
 
 {% block content %}
-<h2>All Products</h2>
+<h2>{{ current_category.name }}</h2>
 
 {% if products %}
 <div class="product-grid">
@@ -20,7 +20,7 @@
 </div>
 {% else %}
 <div class="no-products">
-    <p>No products available yet.</p>
+    <p>No products in this category yet.</p>
 </div>
 {% endif %}
 {% endblock %}
